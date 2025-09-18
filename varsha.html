@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmWise - Smart Agriculture App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .phone {
+            background: #1a1a1a;
+            border-radius: 25px;
+            padding: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .phone:hover {
+            transform: translateY(-5px);
+        }
+
+        .screen {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            height: 580px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .screen-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #28a745;
+        }
+
+        .status-dot.orange { background: #fd7e14; }
+        .status-dot.red { background: #dc3545; }
+
+        .main-card {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .weather-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .action-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            border-color: #28a745;
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .action-text {
+            font-size: 0.9rem;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .nav-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #f8f9fa;
+            border-top: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #6c757d;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #28a745;
+        }
+
+        .nav-item:hover {
+            color: #28a745;
+        }
+
+        .recommendation {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .recommendation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .urgency-high {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+        .urgency-medium {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+        }
+
+        .urgency-low {
+            background: #d1ecf1;
+            border-color: #bee5eb;
+        }
+
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .sensor-card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .sensor-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .sensor-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 8px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #28a745, #20c997);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .crop-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 15px 0;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border-radius: 6px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .calendar-day.today {
+            background: #28a745;
+            color: white;
+        }
+
+        .calendar-day.action {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .features {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            color: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .offline-indicator {
+            background: #6c757d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .voice-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .voice-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 FarmWise</h1>
+            <p>Smart Agriculture Decision Support System</p>
+        </div>
+
+        <div class="wireframe-grid">
+            <!-- Dashboard Screen -->
+            <div class="phone">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-title">Today's Actions</div>
+                        <div class="status-bar">
+                            <div class="status-dot"></div>
+                            <span style="font-size: 0.8rem;">Connected</span>
+                        </div>
+                    </div>
+
+                    <div class="main-card">
+                        <div class="weather-icon">☀️</div>
+                        <h3>Perfect Growing Day!</h3>
+                        <p>28°C • No rain expected</p>
+                    </div>
+
+                    <div class="action-grid">
+                        <div class="action-card">
+                            <div class="action-icon">💧</div>
+                            <div class="action-text">Water Tomatoes<br><strong>2 hours</strong></div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">🌱</div>
+                            <div class="action-text">Check Corn<br><strong>Growth OK</strong></div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">🦗</div>
+                            <div class="action-text">Pest Alert<br><strong>Monitor</strong></div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon">📈</div>
+                            <div class="action-text">This Week<br><strong>$15 saved</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-bar">
+                        <div class="nav-item active">
+                            <div style="font-size: 1.2rem;">🏠</div>
+                            <div style="font-size: 0.8rem;">Home</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">📊</div>
+                            <div style="font-size: 0.8rem;">Data</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">📅</div>
+                            <div style="font-size: 0.8rem;">Calendar</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">👥</div>
+                            <div style="font-size: 0.8rem;">Community</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Recommendations Screen -->
+            <div class="phone">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-title">Smart Recommendations</div>
+                        <div class="status-bar">
+                            <div class="status-dot orange"></div>
+                            <span style="font-size: 0.8rem;">Offline</span>
+                        </div>
+                    </div>
+
+                    <div class="recommendation urgency-high">
+                        <div class="recommendation-header">
+                            <span style="font-size: 1.5rem;">🚨</span>
+                            <strong>URGENT: Water Needed</strong>
+                        </div>
+                        <p><strong>Tomato Field A</strong></p>
+                        <p>Soil moisture: 15% (too dry)</p>
+                        <p>💧 Add <strong>200L water</strong> now</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation urgency-medium">
+                        <div class="recommendation-header">
+                            <span style="font-size: 1.5rem;">⚠️</span>
+                            <strong>Fertilizer Reminder</strong>
+                        </div>
+                        <p><strong>Corn Field B</strong></p>
+                        <p>🌱 Apply <strong>5kg NPK</strong> tomorrow</p>
+                        <p>Best time: 6-8 AM</p>
+                    </div>
+
+                    <div class="recommendation urgency-low">
+                        <div class="recommendation-header">
+                            <span style="font-size: 1.5rem;">ℹ️</span>
+                            <strong>Growth Update</strong>
+                        </div>
+                        <p><strong>Pepper Field C</strong></p>
+                        <p>✅ Growth on track</p>
+                        <p>Next check: 3 days</p>
+                    </div>
+
+                    <div class="nav-bar">
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">🏠</div>
+                            <div style="font-size: 0.8rem;">Home</div>
+                        </div>
+                        <div class="nav-item active">
+                            <div style="font-size: 1.2rem;">📊</div>
+                            <div style="font-size: 0.8rem;">Data</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">📅</div>
+                            <div style="font-size: 0.8rem;">Calendar</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">👥</div>
+                            <div style="font-size: 0.8rem;">Community</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sensor Data Screen -->
+            <div class="phone">
+                <div class="screen">
+                    <div class="offline-indicator">Offline Mode</div>
+                    <div class="screen-header">
+                        <div class="screen-title">Field Sensors</div>
+                        <div class="status-bar">
+                            <div style="font-size: 1.2rem;">🔄</div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+                        <h4 style="color: #2d5a27; margin-bottom: 15px;">Tomato Field A</h4>
+                        <div class="sensor-grid">
+                            <div class="sensor-card">
+                                <div class="sensor-value">15%</div>
+                                <div class="sensor-label">💧 Soil Moisture</div>
+                                <div style="color: #dc3545; font-size: 0.8rem; margin-top: 5px;">Too Low</div>
+                            </div>
+                            <div class="sensor-card">
+                                <div class="sensor-value">28°C</div>
+                                <div class="sensor-label">🌡️ Temperature</div>
+                                <div style="color: #28a745; font-size: 0.8rem; margin-top: 5px;">Perfect</div>
+                            </div>
+                            <div class="sensor-card">
+                                <div class="sensor-value">6.8</div>
+                                <div class="sensor-label">⚗️ pH Level</div>
+                                <div style="color: #28a745; font-size: 0.8rem; margin-top: 5px;">Good</div>
+                            </div>
+                            <div class="sensor-card">
+                                <div class="sensor-value">Med</div>
+                                <div class="sensor-label">🌱 Nutrients</div>
+                                <div style="color: #ffc107; font-size: 0.8rem; margin-top: 5px;">Add Soon</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
+                        <h4 style="color: #2d5a27; margin-bottom: 15px;">Corn Field B</h4>
+                        <div class="sensor-grid">
+                            <div class="sensor-card">
+                                <div class="sensor-value">45%</div>
+                                <div class="sensor-label">💧 Soil Moisture</div>
+                                <div style="color: #28a745; font-size: 0.8rem; margin-top: 5px;">Perfect</div>
+                            </div>
+                            <div class="sensor-card">
+                                <div class="sensor-value">26°C</div>
+                                <div class="sensor-label">🌡️ Temperature</div>
+                                <div style="color: #28a745; font-size: 0.8rem; margin-top: 5px;">Good</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-bar">
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">🏠</div>
+                            <div style="font-size: 0.8rem;">Home</div>
+                        </div>
+                        <div class="nav-item active">
+                            <div style="font-size: 1.2rem;">📊</div>
+                            <div style="font-size: 0.8rem;">Data</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">📅</div>
+                            <div style="font-size: 0.8rem;">Calendar</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">👥</div>
+                            <div style="font-size: 0.8rem;">Community</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar/Planning Screen -->
+            <div class="phone">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-title">Farm Calendar</div>
+                        <div class="status-bar">
+                            <div class="status-dot"></div>
+                            <span style="font-size: 0.8rem;">Synced</span>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h3 style="color: #2d5a27;">December 2024</h3>
+                    </div>
+
+                    <div class="crop-calendar">
+                        <div class="calendar-day" style="font-weight: bold;">S</div>
+                        <div class="calendar-day" style="font-weight: bold;">M</div>
+                        <div class="calendar-day" style="font-weight: bold;">T</div>
+                        <div class="calendar-day" style="font-weight: bold;">W</div>
+                        <div class="calendar-day" style="font-weight: bold;">T</div>
+                        <div class="calendar-day" style="font-weight: bold;">F</div>
+                        <div class="calendar-day" style="font-weight: bold;">S</div>
+                        
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day">6</div>
+                        <div class="calendar-day">7</div>
+                        
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day">10</div>
+                        <div class="calendar-day">11</div>
+                        <div class="calendar-day">12</div>
+                        <div class="calendar-day">13</div>
+                        <div class="calendar-day">14</div>
+                        
+                        <div class="calendar-day">15</div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day today">17</div>
+                        <div class="calendar-day action">18</div>
+                        <div class="calendar-day">19</div>
+                        <div class="calendar-day action">20</div>
+                        <div class="calendar-day">21</div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <div style="background: #fff3cd; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
+                            <strong>Tomorrow (18th)</strong><br>
+                            🌱 Fertilize Corn Field B<br>
+                            ⏰ Best time: 6-8 AM
+                        </div>
+                        <div style="background: #d1ecf1; padding: 10px; border-radius: 8px;">
+                            <strong>Friday (20th)</strong><br>
+                            🚜 Harvest Tomatoes<br>
+                            📦 Market day prep
+                        </div>
+                    </div>
+
+                    <div class="nav-bar">
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">🏠</div>
+                            <div style="font-size: 0.8rem;">Home</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">📊</div>
+                            <div style="font-size: 0.8rem;">Data</div>
+                        </div>
+                        <div class="nav-item active">
+                            <div style="font-size: 1.2rem;">📅</div>
+                            <div style="font-size: 0.8rem;">Calendar</div>
+                        </div>
+                        <div class="nav-item">
+                            <div style="font-size: 1.2rem;">👥</div>
+                            <div style="font-size: 0.8rem;">Community</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>🚀 Key Innovation Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>Voice Commands</h3>
+                    <p>Speak in local language, get instant advice. Perfect for low-literacy users.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Offline-First</h3>
+                    <p>Works without internet. Syncs when connection returns. Never miss critical actions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Smart AI Engine</h3>
+                    <p>Learns from your farm conditions. Recommendations get better over time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Visual Diagnosis</h3>
+                    <p>Take photos of pests/diseases. Get instant identification and treatment advice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost Optimization</h3>
+                    <p>Track money saved through precise water/fertilizer usage. See ROI in real-time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Community Network</h3>
+                    <p>Connect with nearby farmers. Share tips, warnings, and local market prices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="voice-button" onclick="activateVoice()">
+        🎤
+    </div>
+
+    <script>
+        function activateVoice() {
+            alert('🎤 Voice activated! Say "What should I do today?" or "Show my tomato field"');
+        }
+
+        // Simulate real-time updates
+        setInterval(() => {
+            const statusDots = document.querySelectorAll('.status-dot');
+            statusDots.forEach(dot => {
+                if (Math.random() > 0.7) {
+                    dot.classList.toggle('orange');
+                }
+            });
+        }, 3000);
+
+        // Add hover effects to action cards
+        document.querySelectorAll('.action-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.background = '#e7f5e7';
+                setTimeout(() => {
+                    card.style.background = 'white';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
