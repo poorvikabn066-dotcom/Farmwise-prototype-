@@ -1,6 +1,6 @@
 # Solar-Powered Agarbatti Drying & Packaging Machine
 
-**Problem Statement PS 22** — Smart, solar-powered drying and compact packaging system to support home-based agarbatti manufacturing by rural women artisans.
+**Problem Statement PS SIH26022** — Smart solar-powered drying and compact packaging system to support home-based agarbatti manufacturing by rural women artisans.
 
 ## 1. Problem
 
