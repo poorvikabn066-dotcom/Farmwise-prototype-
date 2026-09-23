@@ -6,7 +6,7 @@
 
 Home-based agarbatti (incense stick) makers currently dry freshly rolled sticks in open sunlight or ambient heat. This has several drawbacks:
 
-- Drying takes roughly 9 hours per batch and depends entirely on the weather.
+- Drying takes roughly 1-2 days per batch and depends entirely on the weather.
 - Drying is difficult or impossible at night and on rainy/overcast days.
 - Temperature and humidity are not monitored, so output quality is inconsistent.
 - Packing (weighing, counting, sealing) is done fully by hand, which is slow and limits daily output.
@@ -26,7 +26,7 @@ Weighing/Counting → Heat Sealing → Packet Output
 **Core idea:**
 
 - Sticks are loaded onto removable stainless-steel mesh trays inside an enclosed drying chamber.
-- A thermostat-controlled heater and fans dry the sticks in 4–5 hours instead of 9 hours.
+- A thermostat-controlled heater and fans dry the sticks in 4–5 hours instead of 1 or 2 days
 - Once dry, each tray tilts automatically and slides the sticks onto a chute feeding the packaging section — removing manual unloading.
 - An ESP32 microcontroller reads temperature/humidity/PIR sensors and automatically switches the heater, fans and fragrance pump.
 - Power comes from a 100 Wp solar panel with battery backup, switching automatically to the 230 V grid when solar is insufficient.
@@ -46,7 +46,7 @@ The drying chamber holds 4 removable stainless-steel mesh trays stacked in a rac
 | Sticks per drying cycle | ≈ 4,000 sticks (4 trays) = one 2 kg batch, matching 40 packets of 50 g (100 sticks each) |
 | Tilting mechanism | Small geared motor/servo tilts each tray to ~40–45° after the drying cycle ends |
 | Unloading | Tilted tray slides dried sticks down a chute directly onto the weighing/packaging conveyor |
-| Drying time per cycle | 4–5 hours (vs 9 hours in open sun drying) |
+| Drying time per cycle | 4–5 hours (vs 1-2 days in open sun drying) |
 
 This tray-and-tilt design is what lets the same unit handle both drying and the hand-off into packaging, without a person manually lifting or emptying trays.
 
@@ -122,7 +122,7 @@ The proposed machine holds a controlled 35–40°C chamber temperature with forc
 
 ## 7. Benefits
 
-- Drying time cut roughly in half: 9 h → 4–5 h.
+- Drying time cut roughly in half: 1 day → 4–5 h.
 - Works day or night, sun or rain, thanks to hybrid solar + grid power.
 - Automatic tray-tilt hand-off removes manual lifting/unloading between drying and packaging.
 - Consistent stick quality from controlled temperature and humidity.
