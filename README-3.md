@@ -179,12 +179,4 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 - Low hardware cost (~Rs 18,200) with an estimated payback of about 3–4 weeks of operation.
 - Reduces manual drudgery for home-based women artisans, freeing time for other work.
 
-## 📁 Repository Structure
 
-```
-├── README.md          # this file
-├── docs/               # slides, project report, calculations
-├── images/              # prototype photos, diagrams, charts
-├── hardware/            # component list, circuit diagram
-└── code/                # ESP32 firmware
-```
