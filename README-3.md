@@ -162,8 +162,8 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 
 | Method | 50 g packets produced per day |
 |---|---|
-| Regular (hand packing) | ≈ 27 packets/day |
-| Proposed machine | ≈ 71 packets/day |
+| Regular (hand packing) | ≈ 4.5 packets/day |
+| Proposed machine | ≈ 18 packets/day |
 
 ## 7. Benefits
 
