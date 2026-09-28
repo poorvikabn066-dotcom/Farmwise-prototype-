@@ -145,6 +145,8 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 ### 6.1 Drying Time — Regular vs Proposed Machine
 
 ![Drying time comparison](images/drying_time.png)
+<img width="1080" height="720" alt="WhatsApp Image 2026-09-28 at 8 59 07 AM" src="https://github.com/user-attachments/assets/6d8940a8-8875-4c57-9624-639d9a5c8dab" />
+
 
 | Method | Drying time |
 |---|---|
