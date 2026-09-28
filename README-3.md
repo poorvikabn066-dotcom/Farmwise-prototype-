@@ -76,6 +76,21 @@ Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pu
 
 The ESP32 continuously reads chamber temperature and humidity and switches the heater/fan relays to hold the target drying range.
 ### 3.5 Drying → Packaging Pipeline
+Dried Agarbatti
+      ↓
+    Hopper
+      ↓
+ NEMA 17 Feeder
+      ↓
+ IR Sensor (counts sticks)
+      ↓
+ Required Quantity Reached?
+      ↓
+ Automatic Stopper / Bundling
+      ↓
+ Craft Paper Wrapping
+      ↓
+ Finished, Packed Agarbatti
 
 
 
