@@ -118,7 +118,9 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | | **TOTAL** | | **18,200** | Within Rs 20,000 budget |
 
 ## 4.1 overview of components
-![Uploading WhatsApp Image 2026-09-28 at 6.18.58 PM.jpeg…]()
+<img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 6 18 58 PM" src="https://github.com/user-attachments/assets/077d385f-aee4-4eae-a023-bdd11e2dafca" />
+
+
 
 
 
