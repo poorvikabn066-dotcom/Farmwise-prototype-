@@ -41,11 +41,11 @@ The drying chamber holds 4 removable stainless-steel mesh trays stacked in a rac
 |---|---|
 | Tray size | 600 mm (L) × 400 mm (W) × 50 mm (deep) |
 | Mesh opening | 3 mm × 3 mm woven stainless-steel mesh — holds stick base upright while allowing hot air through |
-| Trays per unit | 4 trays, stacked with ~60 mm gap between them for airflow |
-| Sticks per tray | ≈ 1,000 sticks, arranged upright in slotted mesh rows |
-| Sticks per drying cycle | ≈ 4,000 sticks (4 trays) = one 2 kg batch, matching 40 packets of 50 g (100 sticks each) |
+| Trays per unit | 3 trays, stacked with ~60 mm gap between them for airflow |
+| Sticks per tray | ≈ 300 sticks per tray, arranged upright in slotted mesh rows |
+| Sticks per drying cycle | ≈ 900 sticks (3 trays) = one 1 kg batch, matching 18 packets of 50 g (50 sticks each) |
 | Tilting mechanism | Small geared motor/servo tilts each tray to ~40–45° after the drying cycle ends |
-| Unloading | Tilted tray slides dried sticks down a chute directly onto the weighing/packaging conveyor |
+| Unloading | Tilted tray slides dried sticks down a chute directly onto the counting/packaging conveyor |
 | Drying time per cycle | 4–5 hours (vs 1–2 days in open sun drying, weather-dependent) |
 
 This tray-and-tilt design is what lets the same unit handle both drying and the hand-off into packaging, without a person manually lifting or emptying trays.
@@ -71,7 +71,7 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 ### 3.4 Smart Control (ESP32)
 
 ```
-Sensors (Temperature · Humidity · PIR) → ESP32 → Relays (heater, fans, pump) + Display + Buzzer/LEDs
+Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pump) + Display + Buzzer/LEDs
 ```
 
 The ESP32 continuously reads chamber temperature and humidity and switches the heater/fan relays to hold the target drying range.
@@ -82,16 +82,16 @@ Dried sticks slide off the tilted tray onto a short feed chute that leads into t
 
 | Parameter | Specification (indicative design values) |
 |---|---|
-| Feed | Chute from drying tray → bundling guide → weighing/counting station |
-| Counting/weighing | IR break-beam stick counter or 0–100 g load cell (0.1 g resolution), preset to 100 sticks / 50 g per packet |
+| Feed | Chute from drying tray → bundling guide → counting station |
+| Counting | IR break-beam stick counter
 | Pouch | Pre-formed LDPE/BOPP poly pouch, ≈ 230 mm (L) × 70 mm (W) — sized for standard 9-inch (≈230 mm) agarbatti sticks bundled together |
 | Sealing method | Impulse heat sealer, 100 W, ~150–180°C sealing temperature, 2–3 s seal time per packet |
-| Packaging cycle | ≈ 40–45 s per packet (bundle → weigh → feed → seal) → up to ~80 packets/hour capacity |
-| Output per batch | 40 packets per 4,000-stick (2 kg) drying batch |
-| Output per day | ≈ 71 packets across an 8-hour working day (2 batches) |
+| Packaging cycle | ≈ 40–45 s per packet (count → bundle → feed → seal) |
+| Output per batch | 18 packets per 900 -stick (1 kg) drying batch |
+| Output per day | ≈ 54 packets across a 12-hour working day (3 batches) |
 | Collection | Sealed packets drop onto a small output tray/bin for manual pickup |
 
-This keeps packaging semi-automatic: the machine handles counting, weighing and sealing; a person only needs to load raw sticks at the start and collect finished packets at the end.
+This keeps packaging semi-automatic: the machine handles counting, wrapping and sealing
 
 ## 4. Components List, Cost & Why Used
 
@@ -103,9 +103,9 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | 2 | DC circulation/exhaust fans | 80 W | 500 | Air circulation and moisture removal from the chamber |
 | 3 | Agarbatti forming motor | 150 W | 1,000 | Forms and coats the raw sticks |
 | 4 | Fragrance pump | 20 W | 400 | Controlled, even fragrance application |
-| 5 | Packaging / sealing unit | 100 W | 700 | Weighing and heat-sealing the packets |
+| 5 | Packaging / sealing unit | 100 W | 700 |and heat sealing the packets |
 | 6 | ESP32 controller | 5 W | 450 | Main control — reads sensors, switches loads |
-| 7 | Temp / RH / PIR sensors | 5 W | 500 | Monitoring drying conditions and safety |
+| 7 | Temp / RH / moisture | 5 W | 500 | Monitoring drying conditions and safety |
 | 8 | Display | 3 W | 300 | Shows live status and readings |
 | 9 | Buzzer, relays, LEDs | 5 W | 250 | Load switching, alerts, indication |
 | 10 | Solar panel | 100 Wp | 3,500 | Primary (free) power source |
@@ -163,7 +163,7 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 ## 7. Benefits
 
 - Drying time cut from 1–2 days (open sun, weather-dependent) down to a consistent 4–5 hours.
-- Works day or night, sun or rain, thanks to hybrid solar + grid power.
+- Works day or night, sun or rain, by using hybrid solar + grid power.
 - Automatic tray-tilt hand-off removes manual lifting/unloading between drying and packaging.
 - Consistent stick quality from controlled temperature and humidity.
 - Roughly 2.5× the daily packaging output, since open-sun drying often can't complete a full batch within one working day.
