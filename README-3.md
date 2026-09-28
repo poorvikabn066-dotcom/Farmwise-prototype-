@@ -156,7 +156,8 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 ### 6.2 Packaging Output — Regular vs Proposed Machine
 
 ![Packaging output comparison]
-<img width="1080" height="720" alt="WhatsApp Image 2026-09-28 at 8 59 07 AM" src="https://github.com/user-attachments/assets/9cec38bd-ea78-4540-8287-0264c423ff5f" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-09-28 at 10 14 07 AM" src="https://github.com/user-attachments/assets/62003489-2c6f-4f14-ad56-43313cb86cba" />
+
 
 
 | Method | 50 g packets produced per day |
