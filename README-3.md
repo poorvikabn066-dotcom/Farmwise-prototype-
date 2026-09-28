@@ -60,6 +60,13 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 | Mounting | Fixed tilt frame, ~20–30° facing south, on top of or beside the machine cabinet |
 | Output | Charge controller (40 A) → battery (12 V, 75 Ah) + heater controller |
 
+
+ ### 3.2.1 Solar Power System
+Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
+Charge controller function: senses voltage & current, regulates charging current via MOSFET, inductor, diode, etc.
+Example calculation: if solar panel = 18V and battery = 12.7V, roughly 4A of current flows.
+Power formula: P = V_panel × I_panel
+
 ### 3.3 Hybrid Power Arrangement
 
 - Solar panel (100 Wp) → Charge controller (40 A) → 24 V heater controller → 500 W heater
