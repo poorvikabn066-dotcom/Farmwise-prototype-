@@ -1,8 +1,8 @@
 # Compact Solar-Powered Agarbatti Drying & Packaging System
 
-## 2. System Flow
+## 1. System Flow
 
-### 2.1 Drying → Packaging Pipeline
+### 1.1 Drying → Packaging Pipeline
 
 ```
 Dried Agarbatti
@@ -22,7 +22,7 @@ Dried Agarbatti
  Finished, Packed Agarbatti
 ```
 
-### 2.2 Power Flow
+### 1.2 Power Flow
 
 ```
 Solar Panel
@@ -40,7 +40,7 @@ Charge Controller
 
 ---
 
-## 4. Solar Power System
+## 2. Solar Power System
 
 ```
 Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
@@ -62,7 +62,7 @@ Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
 ---
 
 
-### 5.3 packaging system Components  
+### 2.1 packaging system Components  
 
 | # | Component | Function |
 |---|---|---|
