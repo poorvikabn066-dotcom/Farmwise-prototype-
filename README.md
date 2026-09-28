@@ -1,22 +1,5 @@
 # Compact Solar-Powered Agarbatti Drying & Packaging System
 
-An automated, solar-powered system to dry agarbatti (incense sticks) and then count, bundle, and pack them — reducing manual labor in small-scale agarbatti production.
-
-> **Status:** Concept / design stage — component list and system flow drafted, subsystems not yet built or tested. This README consolidates initial planning notes.
-
----
-
-## 1. Overview
-
-The system has two main stages:
-
-1. **Drying Stage** — solar-heated chamber that dries wet-rolled agarbatti sticks.
-2. **Packaging Stage** — automated counting, bundling, wrapping, and packing of dried sticks.
-
-The whole system is designed to run off solar power (panel + charge controller + battery), making it suitable for off-grid or rural production units.
-
----
-
 ## 2. System Flow
 
 ### 2.1 Drying → Packaging Pipeline
@@ -53,23 +36,7 @@ Charge Controller
 
 ---
 
-## 3. Drying Subsystem
 
-| Aspect | Notes / Open Questions |
-|---|---|
-| Solar panel | ~100W size, efficiency TBD |
-| Solar air collector | For heating intake air |
-| Controller | ESP32 — handles programming & control logic |
-| Drying plate/tray | Material, size, and stick capacity TBD |
-| Environment sensing | Temperature, humidity, moisture — need to define target range |
-| Weighing | Load cell for measuring dried stick batches (TBD) |
-| Tilting mechanism | Servo motor — for tray tilting/unloading |
-| Chamber | Design & material TBD |
-| Ventilation | DC fan / exhaust fan — capacity, energy draw, size & speed TBD |
-| System design | Needs a block diagram and full flowchart |
-| Power budget | Total power/energy consumption not yet calculated |
-
-**Load cell considerations:** movement during weighing, calibration, and vibration need to be accounted for in the design.
 
 ---
 
@@ -94,26 +61,8 @@ Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
 
 ---
 
-## 5. Packaging Subsystem
 
-### 5.1 Packing Method Options
-
-- **Primary packing:**
-  - Shrink sleeving & flow wrapping
-  - Blister packing
-- **Budget range:** ₹2,000 – ₹3,500 (for packing mechanism/materials)
-- Clear film wrap option under consideration
-- "Smart-Belt" concept — conveyor with banner/light-curtain sensor + servo motor
-
-### 5.2 Three Primary Steps
-
-1. **Singulation** — separating individual sticks/bundles
-2. **Counting** — accurate stick count via sensor
-3. **Wrapping / Sealing** — final packaging
-
-> **Known difficulty:** the singulation/picking drum mechanism is expected to be the hardest part to get right.
-
-### 5.3 Components
+### 5.3 packaging system Components  
 
 | # | Component | Function |
 |---|---|---|
@@ -126,33 +75,5 @@ Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
 
 ---
 
-## 6. Open Questions / To Do
 
-- [ ] Finalize solar panel wattage and efficiency target
-- [ ] Choose drying plate material, size, and stick capacity
-- [ ] Define target temperature / humidity / moisture ranges for drying
-- [ ] Select load cell and finalize weighing mechanism (address vibration/calibration issues)
-- [ ] Design drying chamber (material + layout)
-- [ ] Size DC/exhaust fan (capacity, speed, power draw)
-- [ ] Calculate total system power/energy budget
-- [ ] Choose battery type, capacity, and backup strategy
-- [ ] Finalize charge controller (UTL vs Sparkel vs alternatives)
-- [ ] Decide packaging method (shrink sleeve/flow wrap vs blister pack)
-- [ ] Design and prototype the picking/singulation drum
-- [ ] Draw full system block diagram and flowchart
-- [ ] Write ESP32/Arduino control logic (feeder, counting, stopper, packing sequence)
 
----
-
-## 7. Repository Structure (suggested)
-
-```
-/hardware        — wiring diagrams, BOM, datasheets
-/firmware        — ESP32 (drying) and Arduino UNO (packaging) code
-/docs            — block diagrams, flowcharts, calculations
-README.md        — this file
-```
-
----
-
-*This README was compiled from handwritten project notes and will be updated as the design progresses.*
