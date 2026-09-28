@@ -179,7 +179,7 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 - Works day or night, sun or rain, by using hybrid solar + grid power.
 - Automatic tray-tilt hand-off removes manual lifting/unloading between drying and packaging.
 - Consistent stick quality from controlled temperature and humidity.
-- Roughly 2.5× the daily packaging output, since open-sun drying often can't complete a full batch within one working day.
+- Roughly the daily packaging output, since open-sun drying often can't complete a full batch within one working day.
 - Low hardware cost (~Rs 18,200) with an estimated payback of about 3–4 weeks of operation.
 - Reduces manual drudgery for home-based women artisans, freeing time for other work.
 
