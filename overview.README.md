@@ -62,7 +62,7 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 
 ### 3.3 Hybrid Power Arrangement
 
-- Solar panel (100 Wp) → Charge controller (4 A) → 24 V heater controller → 500 W heater
+- Solar panel (100 Wp) → Charge controller (4 A) → 24 V heater controller → 40-50 W heater
 - Solar panel → Charge controller → Battery (12 V, 75 Ah) → ESP32 / sensors / fans
 - 230 V grid → 24 V AC-DC supply (600 W) → 24 V heater (backup)
 - Solar runs the heater during useful sunlight; battery supports the controller, sensors, display and low-power loads; grid takes over when solar is insufficient or at night.
