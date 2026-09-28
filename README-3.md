@@ -76,6 +76,8 @@ Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pu
 
 The ESP32 continuously reads chamber temperature and humidity and switches the heater/fan relays to hold the target drying range.
 
+
+
 ### 3.5 Packaging System
 
 Dried sticks slide off the tilted tray onto a short feed chute that leads into the packaging section, where bundling, weighing/counting and sealing happen in sequence.
