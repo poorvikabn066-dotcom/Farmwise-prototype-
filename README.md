@@ -71,7 +71,7 @@ Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
 | 3 | DC geared motor (12V, 30–60 RPM) | Drives the conveyor belt |
 | 4 | SG90 servo motors (×2) | One for the bag dropper gate, one for the folding flap |
 | 5 | IR sensor module | Accurately counts stock (for clear film wrap / blister pack lines) |
-| 6 | L298N motor driver or relay module | Controls the 12V DC conveyor motor |
+| 6 | L298N motor driver or relay module | Controls the 12V DC conveyer motor |
 
 ---
 
