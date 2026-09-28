@@ -58,14 +58,7 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 | Panel size | ≈ 1000 mm (L) × 670 mm (W) × 30 mm (D) |
 | Weight | ≈ 7.5–8 kg |
 | Mounting | Fixed tilt frame, ~20–30° facing south, on top of or beside the machine cabinet |
-| Output | Charge controller (40 A) → battery (12 V, 75 Ah) + heater controller |
-
-
- ### 3.2.1 Solar Power System
-Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
-Charge controller function: senses voltage & current, regulates charging current via MOSFET, inductor, diode, etc.
-Example calculation: if solar panel = 18V and battery = 12.7V, roughly 4A of current flows.
-Power formula: P = V_panel × I_panel
+| Output | Charge controller (40 A) → battery (12 V, 75 Ah) + heater controller 
 
 ### 3.3 Hybrid Power Arrangement
 
@@ -82,32 +75,6 @@ Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pu
 ```
 
 The ESP32 continuously reads chamber temperature and humidity and switches the heater/fan relays to hold the target drying range.
-### 3.5 Drying → Packaging Pipeline
-Dried Agarbatti
-      ↓
-    Hopper
-      ↓
- NEMA 17 Feeder
-      ↓
- IR Sensor (counts sticks)
-      ↓
- Required Quantity Reached?
-      ↓
- Automatic Stopper / Bundling
-      ↓
- Craft Paper Wrapping
-      ↓
- Finished, Packed Agarbatti
-### 3.6 Power Flow
-Solar Panel
-      ↓
-Charge Controller
-      ↓
-    Battery
-    ├── Drying subsystem
-    └── Packaging subsystem
-
-
 
 ### 3.5 Packaging System
 
