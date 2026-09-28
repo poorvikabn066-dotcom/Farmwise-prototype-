@@ -92,6 +92,13 @@ Dried Agarbatti
       ↓
  Finished, Packed Agarbatti
 ### 3.6 Power Flow
+Solar Panel
+      ↓
+Charge Controller
+      ↓
+    Battery
+    ├── Drying subsystem
+    └── Packaging subsystem
 
 
 
