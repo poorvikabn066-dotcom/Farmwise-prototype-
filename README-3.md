@@ -117,6 +117,10 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | 16 | Changeover switch, MCB, wiring | — | 700 | Source selection between solar/grid and protection |
 | | **TOTAL** | | **18,200** | Within Rs 20,000 budget |
 
+## 4.1 overview of components
+<img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 11 51 22 AM" src="https://github.com/user-attachments/assets/51e90e32-52ce-4836-9ec3-65ab315c0fdc" />
+
+
 ## 5. Temperature — Normal (Open Sun) Drying Conditions
 
 Reference values for how ambient conditions affect open-sun drying time, used to size the machine's target drying range:
