@@ -118,7 +118,9 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | | **TOTAL** | | **18,200** | Within Rs 20,000 budget |
 
 ## 4.1 overview of components
-<img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 11 51 22 AM" src="https://github.com/user-attachments/assets/51e90e32-52ce-4836-9ec3-65ab315c0fdc" />
+![Uploading WhatsApp Image 2026-09-28 at 6.18.58 PM.jpeg…]()
+
+
 
 
 ## 5. Temperature — Normal (Open Sun) Drying Conditions
