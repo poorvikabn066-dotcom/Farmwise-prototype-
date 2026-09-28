@@ -66,7 +66,7 @@ Solar Panel → Charge Controller → Battery → (Drying + Packaging loads)
 
 | # | Component | Function |
 |---|---|---|
-| 1 | Arduino UNO R3 | Main controller |
+| 1 | ESP32 | Main controller |
 | 2 | NEMA 17 stepper motor + A4988 driver | Rotates the grooved picking drum |
 | 3 | DC geared motor (12V, 30–60 RPM) | Drives the conveyor belt |
 | 4 | SG90 servo motors (×2) | One for the bag dropper gate, one for the folding flap |
