@@ -93,21 +93,24 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 
 | # | Component | Rating | Cost (Rs) | Why it's used |
 |---|---|---|---|---|
-| 1 | Heating element | 500 W | 10,000 | Dries sticks faster; thermostat holds target temperature |
+| 1 | solar panel | 500 W | 10,000 | Primary (free) power source |
 | 2 | DC circulation/exhaust fans | 80 W | 500 | Air circulation and moisture removal from the chamber |
 | 3 | Packaging / sealing unit | 100 W | 700 |and heat sealing the packets |
 | 4 | ESP32 controller | 5 W | 450 | Main control — reads sensors, switches loads |
 | 5 | Temp / Humidity/ moisture | 5 W | 500 | Monitoring drying conditions and safety |
 | 6 | Display | 0.49W | 300 | Shows live status and readings |
 | 7 | Buzzer, relays, LEDs | 5 W | 250 | Load switching, alerts, indication |
-| 8 | Solar panel | 500 Wp | 3,500 | Primary (free) power source |
+| 8 | DC-DC converter | - | 200 |
 | 9 | charge controller | 40A | 900 | Battery protection and DC distribution |
 | 10 | 24 V DC PTC heater fan | 240W | 600 | Regulates solar power delivered to the heater |
 | 11 | Single phase supply | 230V supply | electricity bill | Grid backup power for the heater |
 | 12 | Battery | 12 V, 150Ah | 10,000| Backup for electronics and low-power loads |
 | 13 | Changeover switch, MCB, wiring | — | 700 | Source selection between solar/grid and protection |
 | 14 | SNPS rectifier | 12V 30A | 2000 |
-| | **TOTAL** | | **** | Within Rs 20,000 budget |
+| 15 | IR sensor | - | 100 |
+| 16 | Servomotor | - | 100-200 |
+| 17 | 3 Trays | - | 900 |
+| | **TOTAL** | | **30,000** |
 
 ## 4.1 overview of components
 <img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 6 18 58 PM" src="https://github.com/user-attachments/assets/077d385f-aee4-4eae-a023-bdd11e2dafca" />
