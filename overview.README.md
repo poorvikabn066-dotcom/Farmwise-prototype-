@@ -137,7 +137,7 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 |---|---|---|
 | Sunny day (solar direct) | 35–40°C | 4–5 hours |
 | Cloudy day (battery backup) | 35–40 degree celcius | 4–5 hours | 
-| Night / rainy day (grid backup) | 35–40°C (thermostat-controlled) | 4–5 hours |
+| Night / rainy day (grid backup) | 35–40°C | 4–5 hours |
 
 ## 6. Comparison Charts & Data
 
