@@ -54,7 +54,7 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 
 | Parameter | Specification (typical 100 Wp panel) |
 |---|---|
-| Rated power | 100 Wp (polycrystalline/monocrystalline) |
+| Rated power | 500 Wp (polycrystalline/monocrystalline) |
 | Panel size | ≈ 1000 mm (L) × 670 mm (W) × 30 mm (D) |
 | Weight | ≈ 7.5–8 kg |
 | Mounting | Fixed tilt frame, ~20–30° facing south, on top of or beside the machine cabinet |
@@ -62,9 +62,9 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 
 ### 3.3 Hybrid Power Arrangement
 
-- Solar panel (100 Wp) → Charge controller (4 A) → 24 V heater controller → 40-50 W heater
-- Solar panel → Charge controller → Battery (12 V, 75 Ah) → ESP32 / sensors / fans
-- 230 V grid → 24 V AC-DC supply (600 W) → 24 V heater (backup)
+- Solar panel (500 Wp) → Charge controller (12 V,40 A)  heater→ 240W 12V 
+- Solar panel → Charge controller → Battery (12 V, 150 Ah) → ESP32 / sensors / fans
+- 230 V grid → 12 V DC supply → 12 V heater (backup)
 - Solar runs the heater during useful sunlight; battery supports the controller, sensors, display and low-power loads; grid takes over when solar is insufficient or at night.
 - A changeover switch + MCB handle source selection and protection.
 
