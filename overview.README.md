@@ -58,17 +58,11 @@ This tray-and-tilt design is what lets the same unit handle both drying and the 
 | Panel size | ≈ 1000 mm (L) × 670 mm (W) × 30 mm (D) |
 | Weight | ≈ 7.5–8 kg |
 | Mounting | Fixed tilt frame, ~20–30° facing south, on top of or beside the machine cabinet |
-| Output | Charge controller (4 A) → battery (12 V, 75 Ah) + heater controller 
+| Output | Charge controller (40 A) → battery (12 V, 150 Ah) + heater controller 
 
-### 3.3 Hybrid Power Arrangement
 
-- Solar panel (500 Wp) → Charge controller (12 V,40 A)  heater→ 240W 12V 
-- Solar panel → Charge controller → Battery (12 V, 150 Ah) → ESP32 / sensors / fans
-- 230 V grid → 12 V DC supply → 12 V heater (backup)
-- Solar runs the heater during useful sunlight; battery supports the controller, sensors, display and low-power loads; grid takes over when solar is insufficient or at night.
-- A changeover switch + MCB handle source selection and protection.
 
-### 3.4 Smart Control (ESP32)
+### 3.3 Smart Control (ESP32)
 
 ```
 Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pump) + Display + Buzzer/LEDs
@@ -76,7 +70,7 @@ Sensors (Temperature, Humidity, Moisture) → ESP32 → Relays (heater, fans, pu
 
 The ESP32 continuously reads chamber temperature and humidity and switches the heater/fan relays to hold the target drying range.
 
-### 3.5 Packaging System
+### 3.4 Packaging System
 
 Dried sticks slide off the tilted tray onto a short feed chute that leads into the packaging section, where bundling, weighing/counting and sealing happen in sequence.
 
@@ -108,11 +102,11 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | 7 | Temp / RH / moisture | 5 W | 500 | Monitoring drying conditions and safety |
 | 8 | Display | 3 W | 300 | Shows live status and readings |
 | 9 | Buzzer, relays, LEDs | 5 W | 250 | Load switching, alerts, indication |
-| 10 | Solar panel | 100 Wp | 3,500 | Primary (free) power source |
-| 11 | Solar charge controller | 4A | 900 | Battery protection and DC distribution |
+| 10 | Solar panel | 500 Wp | 3,500 | Primary (free) power source |
+| 11 | Solar charge controller | 40A | 900 | Battery protection and DC distribution |
 | 12 | 24 V DC heater controller | — | 800 | Regulates solar power delivered to the heater |
 | 13 | 24 V AC-DC supply | 600 W | 1,500 | Grid backup power for the heater |
-| 14 | Battery | 12 V, 75 Ah | 4,500 | Backup for electronics and low-power loads |
+| 14 | Battery | 12 V, 150Ah | 4,500 | Backup for electronics and low-power loads |
 | 15 | Inverter | 1 kVA | 1,200 | Small AC backup loads |
 | 16 | Changeover switch, MCB, wiring | — | 700 | Source selection between solar/grid and protection |
 | | **TOTAL** | | **18,200** | Within Rs 20,000 budget |
