@@ -109,7 +109,7 @@ This keeps packaging automatic: the machine handles counting, wrapping and seali
 
 
 ## 4.2 overview of components
-<img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 6 18 58 PM" src="https://github.com/user-attachments/assets/077d385f-aee4-4eae-a023-bdd11e2dafca" />
+<img width="1536" height="1024" alt="WhatsApp Image 2026-09-29 at 5 49 16 PM" src="https://github.com/user-attachments/assets/7cab019d-506e-43ce-a8be-ae5e76022d9b" />
 
 
 
