@@ -111,8 +111,11 @@ Total hardware cost comes to ≈ **Rs 18,200** — within the **Rs 20,000 budget
 | 16 | Servomotor | - | 100-200 |
 | 17 | 3 Trays | - | 900 |
 | | **TOTAL** | | **30,000** |
+### 4.1 Drying system
+<img width="1599" height="901" alt="WhatsApp Image 2026-09-29 at 1 43 15 PM" src="https://github.com/user-attachments/assets/a52e627b-0adb-4bbe-b022-52be2261c9c5" />
 
-## 4.1 overview of components
+
+## 4.2 overview of components
 <img width="1536" height="1024" alt="WhatsApp Image 2026-09-28 at 6 18 58 PM" src="https://github.com/user-attachments/assets/077d385f-aee4-4eae-a023-bdd11e2dafca" />
 
 
