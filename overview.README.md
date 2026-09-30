@@ -174,4 +174,12 @@ Unlike open-sun drying, the machine's chamber temperature and drying time stay t
 - Low hardware cost (~Rs 30,000) with an estimated payback of about 3–4 weeks of operation.
 - Reduces manual drudgery for home-based women artisans, freeing time for other work.
 
+  ## 8. Why this machine instead of open-sun drying
+
+* Faster: dries in about 4-5 hrs, versus 1-2 days in the open sun.
+* Weather-proof: the solar + battery + grid backup lets it run in rain, clouds and at night. Open drying stops or spoils sticks when the weather turns.
+* Consistent quality: sensors control temperature (around 60°C) and airflow, so sticks dry evenly with no breakage, dust or insect contamination.
+* Less labour: the tray tilting and automatic packaging (count, seal) reduce manual work for the women artisans.
+* Clean and compact: the wheeled unit fits at home, so there's no need for a large open space, and it runs on solar, which means low running cost.
+
 
