@@ -36,8 +36,11 @@ Charge Controller
 ## 1.3 Battery information
 *Charging time*
 The 500W panel gives ~350-400 W in real sunlight.
+
 From 50% to full (900 Wh): ~2.5 hrs
+
 From empty to full (1800 Wh): ~5 hrs of good sun. 
+
 The 40A controller can handle the panel current (~36A).
 
 
